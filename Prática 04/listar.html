@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <h1>Produtos Cadastrados</h1>
+    {% if regs %}
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Preço Compra</th>
+                <th>Preço Venda</th>
+                <th>Data</th>
+            </tr>
+            {% for produto in regs %}
+            <tr>
+                <td>{{ produto[0] }}</td>
+                <td>{{ produto[1] }}</td>
+                <td>R$ {{ produto[2] }}</td>
+                <td>R$ {{ produto[3] }}</td>
+                <td>{{ produto[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Nenhum produto cadastrado</p>
+    {% endif %}
+</body>
+</html>
